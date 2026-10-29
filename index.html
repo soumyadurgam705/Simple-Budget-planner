@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Budget Planner</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Simple Budget Planner</h1>
+      <p>Plan your money. Track your spending.</p>
+    </header>
+
+    <section class="card">
+      <h2>Set Monthly Budget</h2>
+      <form id="budgetForm">
+        <label for="budgetInput">Budget amount (₹)</label>
+        <input id="budgetInput" type="number" min="0" step="0.01"
+          placeholder="Enter monthly budget" required>
+        <button type="submit">Save Budget</button>
+      </form>
+    </section>
+
+    <section class="summary">
+      <div class="card">
+        <h3>Monthly Budget</h3>
+        <p class="amount" id="budgetTotal">₹0.00</p>
+      </div>
+      <div class="card">
+        <h3>Total Income</h3>
+        <p class="amount income" id="incomeTotal">₹0.00</p>
+      </div>
+      <div class="card">
+        <h3>Total Expenses</h3>
+        <p class="amount expense" id="expenseTotal">₹0.00</p>
+      </div>
+      <div class="card">
+        <h3>Remaining Balance</h3>
+        <p class="amount" id="balance">₹0.00</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Add Transaction</h2>
+      <form id="transactionForm">
+        <label for="description">Description</label>
+        <input id="description" type="text"
+          placeholder="e.g. Food or Salary" required>
+
+        <label for="amount">Amount (₹)</label>
+        <input id="amount" type="number" min="0.01" step="0.01"
+          placeholder="Enter amount" required>
+
+        <label for="type">Transaction type</label>
+        <select id="type">
+          <option value="expense">Expense</option>
+          <option value="income">Income</option>
+        </select>
+
+        <button type="submit">Add Transaction</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Transactions</h2>
+      <div id="transactionList">
+        <p>Your transactions will appear here.</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
